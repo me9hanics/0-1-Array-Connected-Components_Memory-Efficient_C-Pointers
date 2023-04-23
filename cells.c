@@ -65,20 +65,7 @@ IntList* CoupleTogetherCells(CellList* onesList){
 
                 j = j->next;
             }
-            /* j reached the end of the list, needs to be checked here too*/
-            if(AreNeighbours(i->current, j->current)){
-                CellList* tillLast = i;
-                while(tillLast->next != NULL && tillLast->next != j){
-                    tillLast = tillLast->next;
-                }
-                if(tillLast->next == j){ /* Note: this is useless, if i->next==j (when j is the last element, and i is the penultimate element) */
-                    tillLast->next = NULL;
-                    j->next = i->next;
-                    i->next = j;
-                }
 
-                blobBorder++;
-            }
 
         }
         /* If the index is on the border after the last search, that means that all cells with index bigger than blobBorder
@@ -96,7 +83,14 @@ IntList* CoupleTogetherCells(CellList* onesList){
         i = i->next;
         index++;
     }
-
+    if(blobBorder != -1)
+    {
+        IntList* temp = (IntList*) malloc(sizeof(IntList));
+        temp->value = blobBorder;
+        temp->next = NULL;
+        end->next = temp;
+        end = temp; /* This is not necessary, but I like to keep the end pointer at the end of the list */
+    }
     return start;
 }
 
