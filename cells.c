@@ -35,7 +35,7 @@ int AreNeighbours(Cell a, Cell b){
     }
 }
 
-IntList* CoupleTogetherCells(CellList* onesList){
+IntList* CoupleCellsTogether(CellList* onesList){
     IntList* start = (IntList*) malloc(sizeof(IntList));
     IntList* end = start;
     CellList* i = onesList;
@@ -94,7 +94,7 @@ IntList* CoupleTogetherCells(CellList* onesList){
     return start;
 }
 
-int findLargestBlob(int *array, int rows, int cols)
+int BiggestComponentSize(int *array, int rows, int cols)
 {
     int size = 0;
     CellList* onesList;
@@ -102,7 +102,7 @@ int findLargestBlob(int *array, int rows, int cols)
 /* We gather the list of cells containing 1 */
     onesList = GetOnes(array, rows, cols);
 /* Now we sort the neighbouring ones together, parsing different blobs. The function returns the list of border indexes */
-    blobBorders = CoupleTogetherCells(onesList);
+    blobBorders = CoupleCellsTogether(onesList);
 
     /*Acquire sizes from the difference*/
     IntList* borderIndex = blobBorders;

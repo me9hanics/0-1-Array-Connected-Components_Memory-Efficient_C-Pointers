@@ -17,7 +17,7 @@ int main(void)
     int rows1 = 6;
     int cols1 = 5;
 
-    int size1 = findLargestBlob((int*)array1, rows1, cols1);
+    int size1 = BiggestComponentSize((int*)array1, rows1, cols1);
 
     int array2[7][1]=
             {
@@ -34,7 +34,7 @@ int main(void)
     int rows2 = 7;
     int cols2 = 1;
 
-    int size2 = findLargestBlob((int*)array2, rows2, cols2);
+    int size2 = BiggestComponentSize((int*)array2, rows2, cols2);
 
     int array3[2][5] =
             {
@@ -44,7 +44,7 @@ int main(void)
     int rows3 = 2;
     int cols3 = 5;
 
-    int size3 = findLargestBlob((int*)array3, rows3, cols3);
+    int size3 = BiggestComponentSize((int*)array3, rows3, cols3);
 
     int array4[3][5] =
             {
@@ -55,7 +55,7 @@ int main(void)
     int rows4 = 3;
     int cols4 = 5;
 
-    int size4 = findLargestBlob((int*)array4, rows4, cols4);
+    int size4 = BiggestComponentSize((int*)array4, rows4, cols4);
 
     int array5[4][6] =
             {
@@ -67,8 +67,8 @@ int main(void)
     int rows5 = 4;
     int cols5 = 6;
 
-    int size5 = findLargestBlob((int*)array5, rows5, cols5);
+    int size5 = BiggestComponentSize((int*)array5, rows5, cols5);
 
-    printf("Largest blob sizes: %d, %d, %d, %d, %d", size1, size2, size3, size4, size5);
+    printf("Largest connected component sizes: %d, %d, %d, %d, %d", size1, size2, size3, size4, size5);
     return 0;
 }

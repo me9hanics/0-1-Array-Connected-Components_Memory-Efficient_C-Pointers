@@ -18,8 +18,8 @@ typedef struct IntList{
 
 CellList* GetOnes(int* array, int rows, int cols);
 int AreNeighbours(Cell a, Cell b);
-IntList* CoupleTogetherCells(CellList* onesList);
-int findLargestBlob(int *array, int rows, int cols);
+IntList* CoupleCellsTogether(CellList* onesList);
+int BiggestComponentSize(int *array, int rows, int cols);
 
 
 #endif //CELLS_LIBRARY_H
