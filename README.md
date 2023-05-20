@@ -15,3 +15,5 @@ A main.c file with a main function, that tests the component finding algorithm w
 -Then, we reorder them in the list such that cells in one blob are packed together in the list(CoupleCellsTogether). The list is continuosly rearranged until all cells in one blob are "neighbours" in the list, making up a "blob" in the linked list, this way we're filling up blobs until there are no more neighbours. After completing a blob (no more cells can be added to it), the last cell added will be the "border", its index is stored in another list. 
 
 -The biggest size then can be easily evaluated from the differences of consecutive borders.
+
+### (Visualization) More soon...
